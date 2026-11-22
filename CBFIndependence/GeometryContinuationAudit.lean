@@ -1,0 +1,22 @@
+import CBFIndependence.Geometry
+import CBFIndependence.Continuation
+import CBFIndependence.MaximalExtension
+import CBFIndependence.CompactContinuation
+import CBFIndependence.LocalWellposed
+
+#print axioms CBFIndependence.Geometry.normals_positive_multiple_at_boundary_of_eventuallyEq
+#print axioms CBFIndependence.Geometry.mem_frontier_of_regular_zero
+#print axioms CBFIndependence.Geometry.normalCoordinates
+#print axioms CBFIndependence.Geometry.normalCoordinates_boundary_iff
+#print axioms CBFIndependence.Geometry.tendsto_normalCoordinates_iff
+#print axioms CBFIndependence.Continuation.exists_endpoint_of_continuous_field
+#print axioms CBFIndependence.Continuation.glueAt_solves
+#print axioms CBFIndependence.MaximalExtension.exists_maximal_extension
+#print axioms CBFIndependence.MaximalExtension.exists_maximal_extension_on
+#print axioms CBFIndependence.MaximalExtension.stable_all_solutions_of_stable_maximal_on
+#print axioms CBFIndependence.continuousOn_compact_maximal_global
+#print axioms CBFIndependence.exists_maximal_solution_on
+#print axioms CBFIndependence.continuousOn_strongStable_eventually_global
+#print axioms CBFIndependence.common_local_wellposed
+#print axioms CBFIndependence.common_local_wellposed_dynamics
+#print axioms CBFIndependence.ControllerProgramsWellposedOn.exists_maximal_solutions
