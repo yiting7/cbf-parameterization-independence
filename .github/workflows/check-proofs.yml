@@ -1,0 +1,26 @@
+name: Check Lean proofs
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the pinned Lean toolchain
+        uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          use-github-cache: false
+          use-mathlib-cache: false
+      - name: Fetch compiled mathlib dependencies
+        run: |
+          mapfile -t modules < <(awk '$1 == "import" && $2 ~ /^Mathlib([.]|$)/ {print $2}' *.lean */*.lean | sort -u)
+          lake exe cache get "${modules[@]}"
+      - name: Build and check the proofs from source
+        run: lake --no-ansi --no-cache build
